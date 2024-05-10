@@ -1,0 +1,42 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Exam Results of {{studentName}}</title>
+    <style>
+      table { border-collapse: collapse; width: 100%; } th, td { border: 1px
+      solid #ddd; padding: 8px; text-align: left; } th { background-color:
+      #f2f2f2; }
+    </style>
+  </head>
+  <body>
+    <p>Hi,</p>
+    <p>Result of {{studentName}}</p>
+    <p>Email is {{studentEmail}}</p>
+    <p>College is {{college}}</p>
+    <p>Score is {{score}} out of 15</p>
+    <p>Here are {{studentName}} exam's results:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Question</th>
+          <th>Answer</th>
+          <th>Is Correct</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each results}}
+          <tr>
+            <td>{{this.question}}</td>
+            <td>{{this.selectedAnswer}}</td>
+            <td>{{this.isCorrect}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <p>Best Regards</p>
+    <p>IP Academy Team</p>
+  </body>
+</html>
