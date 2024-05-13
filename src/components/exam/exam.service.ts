@@ -20,7 +20,7 @@ export class ExamService extends CrudService {
   async submitExam(submitExamDTO: SubmitExamDTO, user: any): Promise<any> {
     console.log('destructure user', user);
     const { score, result } = submitExamDTO;
-    const student = this.studentModel.findOneAndUpdate(
+    const student = await this.studentModel.findOneAndUpdate(
       { _id: user?.sub },
       {
         $set: {
@@ -34,7 +34,7 @@ export class ExamService extends CrudService {
       user?.userName,
       result,
       score,
-      'student?.college',
+      student?.collegeName,
     );
     return {
       status: true,

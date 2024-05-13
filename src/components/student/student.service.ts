@@ -36,9 +36,7 @@ export class StudentService extends CrudService {
         userName: result?.name,
         userEmail: result?.email,
       };
-      console.log(payload,"payload");
       const access_token = await this.jwtService.signAsync(payload);
-
       return {
         status: true,
         access_token,

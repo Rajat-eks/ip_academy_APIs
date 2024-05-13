@@ -14,7 +14,7 @@ export class MailService {
   ): any {
     this.mailerService
       .sendMail({
-        to: 'satya.tyagi@effectualservices.com',
+        to: 'rajat.verma@effectualservices.in',
         from: 'eksuser@effectualservices.in',
         subject: 'IP Academy Result',
         template: 'examComplete',
