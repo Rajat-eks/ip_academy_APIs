@@ -4,9 +4,9 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>Exam Results of {{studentName}}</title>
     <style>
-      table { border-collapse: collapse; width: 100%; } th, td { border: 1px
+      table { border-collapse: collapse; width: 70%; } th, td { border: 1px
       solid #ddd; padding: 8px; text-align: left; } th { background-color:
-      #f2f2f2; }
+      #f2f2f2; } .tableContainer{paddingX:'50px'}
     </style>
   </head>
   <body>
@@ -17,28 +17,30 @@
     <p>Score is {{score}} out of 15</p>
     <p>Here are {{studentName}} exam's results:</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Question</th>
-          <th>Answer</th>
-          <th>Is Correct</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each results}}
+    <div class='tableContainer'>
+      <table>
+        <thead>
           <tr>
-            <td>{{this.question}}</td>
-            <td>{{this.selectedAnswer}}</td>
-            <td>{{#if this.isCorrect}}
-                True
-              {{else}}
-                False
-              {{/if}}</td>
+            <th>Question</th>
+            <th>Answer</th>
+            <th>Is Correct</th>
           </tr>
-        {{/each}}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {{#each results}}
+            <tr>
+              <td>{{this.question}}</td>
+              <td>{{this.selectedAnswer}}</td>
+              <td>{{#if this.isCorrect}}
+                  True
+                {{else}}
+                  False
+                {{/if}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
 
     <p>Best Regards</p>
     <p>IP Academy Team</p>
