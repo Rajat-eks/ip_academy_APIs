@@ -30,7 +30,11 @@
           <tr>
             <td>{{this.question}}</td>
             <td>{{this.selectedAnswer}}</td>
-            <td>{{this.isCorrect}}</td>
+            <td>{{#if this.isCorrect}}
+                True
+              {{else}}
+                False
+              {{/if}}</td>
           </tr>
         {{/each}}
       </tbody>
